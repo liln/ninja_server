@@ -2,13 +2,13 @@
 
 This is a tiny HTTP server written in Ruby.
 
-### Features
+### Features that Ninjas provide
 
 * Serves up static files from a directory to a web browser
-* Sanitizes the path requested to prevent access outside the folder
-* Implicitly adds index.html to path when accessing directory roots
-* NinjaServer hides the functionality of TinyServer within it
-* Defaults to using public folder to serve up assets unless the public folder does not exist
+* Slices off bad .. in the path requested to prevent access outside the folder
+* Reads your mind by implicitly adds index.html to path when accessing directory roots
+* Hides the functionality of TinyServer within it
+* Intelligently points to /public if it exists, otherwise it uses the folder called server
 * Silently kills the server with CTRL+c
 
 ## Installation
@@ -28,7 +28,9 @@ Or install it yourself as:
 ## Usage
 
 `ninja_server` will use default 1337 port, try to use public folder or this folder
+
 `ninja_server port` will try to use public folder or this folder
+
 `ninja_server port staticroot` will serve up to your desires
 
 ## Contributing
